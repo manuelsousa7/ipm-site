@@ -1,0 +1,99 @@
+"Questionario"
+
+--------Profiling do Utilizador-----------
+
+Idade:
+	0-18
+	19-30
+	31-40
+	41-65
+	66+
+
+Sexo:
+	Masculino
+	Feminino
+
+Utiliza tecnologia com que frequencia (nunca,raramente,1vez por semana,3 vezes por semana, todos os dias):
+	PC
+	Smartphone/Tablets
+	Wearables
+
+Costuma ir a(Nunca, Raramente, Frequentemente, Todos os dias):
+	Bar :
+	Restaurante :
+	Café :
+	Takeaway :
+	DriveThrough :
+
+Perfere encomendar(Rating de preferencia):
+	No balcão;
+	Na mesa;
+	Terminais automaticos;
+	Em casa;
+
+Com que frequência consome refeições fora de casa (Nunca, Raramente, Ás vezes, Frequentemente):
+
+Porque deseja consumir refeições fora de casa:
+	Rapidez;
+	Menos trabalho;
+	Convívio;
+		
+
+Considera que haja dificuldades/limitações no uso de terminais automáticos:
+	Sim;
+	Não;
+
+Se respondeu sim, indique algumas:
+	(texto)
+
+
+Costuma consumir bebidas alcoolicas:
+	Sim;
+	Nao;
+
+Quantidade de bebidas e que consome por refeição:
+	nenhuma;
+	uma;
+	duas;
+	três ou mais;
+
+Costuma consumir aperitivos:
+	sim;
+	não;
+
+Preço que acha razoavel uma refeição, por pessoa:
+	0-5;
+	6-10;
+	10-15;
+	15-20;
+	20+
+
+Que outras possibilidades gostaria de ter quando consome ou encomenda refeições fora de casa:
+	(texto)
+
+
+------------------------------OUTRAS MERDAS-------------------------------------------------
+
+PERGUNTAS:
+
+	1 - Quem vai utilizar o sistema? v
+
+	2 - Que tarefas executam atualmente? v
+
+	3 - Que tarefas são desejáveis? v
+
+	4 - Como se aprendem as tarefas?
+
+	5 - Onde são desempenhadas as tarefas? v
+
+	6 - Qual a relação entre o utilizador e a informação?
+
+	7 - Que outros instrumentos tem o utilizador? v
+
+	8 - Como comunicam os utilizadores entre si?
+
+	9 - Qual a frequência de desempenho das tarefas? v
+
+	10 - Quais as restrĩções de tempo impostas?
+
+	11 - Que acontece se algo correr mal?
