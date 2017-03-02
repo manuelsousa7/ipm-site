@@ -1,4 +1,4 @@
-"Questionario"
+Questionario"
 
 --------Profiling do Utilizador-----------
 
@@ -37,7 +37,7 @@ Porque deseja consumir refeições fora de casa:
 	Rapidez;
 	Menos trabalho;
 	Convívio;
-		
+
 
 Considera que haja dificuldades/limitações no uso de terminais automáticos:
 	Sim;
@@ -64,9 +64,55 @@ Costuma consumir aperitivos:
 Preço que acha razoavel uma refeição, por pessoa:
 	0-5;
 	6-10;
-	10-15;
-	15-20;
-	20+
+	11-15;
+	16-20;
+	21+
+
+Costuma ir ao restaurante maioritariamente com(Single choice):
+	Sozinho;
+	Acompanhado;
+
+Se costuma ir acompanhado costuma pedir:
+	Conta partilhada;
+	Conta individual;
+
+Se pede conta partilhada quão complicado costuma ser fazer as contas e obter o preço por pessoa?(1-5):
+
+Se vai acompanhado costuma pedir pratos/bebidas partilhados/as:
+	Sim;
+	Não;
+
+Quanto tempo acha que deveria demorar em media, desde que se senta até que paga a conta:
+	5-10 mins
+	11-20 mins
+	21-30 mins
+	31+ mins
+
+Costuma utilizar mais mutibanco ou dinheiro:
+	dinheiro;
+	multibanco;
+
+---------------------Parte das tarefas desejáveis-----------------------------------------------------
+
+Se a sua bebida estivesse no final preferia(single choice):
+	Que o empregado viesse emidiatamente encher o copo mesmo sem pedir;
+	Tivesse um botão para pedir mais;
+	não sei;
+
+Consideraria que seria importante/util equanto espera pelo seu pedido(de nada importante, ate muito importante):
+	Poder jogar jogos com os seus amigos;
+	Ouvir musica;
+	Ver videos;
+	Ver desporto/televisao;
+	Apenas conversar;
+
+Acha que seria importante poder pagar diretamente na mesa sem ter de ir ao balcão:
+	nada importante;
+	puco importante;
+	relevante;
+	não importa;
+	muito importante;
+	essenssial;
 
 Que outras possibilidades gostaria de ter quando consome ou encomenda refeições fora de casa:
 	(texto)
