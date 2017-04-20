@@ -1,0 +1,154 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
+<title>Menu Inicial</title>
+
+<meta charset="utf-8">
+
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="ism/css/my-slider.css"/>
+<script src="ism/js/ism-2.2.min.js"></script>
+
+<!--<script type="text/javascript" src="script.js"></script>-->
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="dist/css/flat-ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="clock/flipclock.css"> 
+    
+    <script src="google/jquery.min.js"></script>
+    <script src="clock/flipclock.js"></script>
+ 
+ <link rel="stylesheet" href="MenuStyle.css">
+
+</head>
+
+<body>
+    
+    <script type="text/javascript">
+        // variavel global que guarda  a  ultima sugestao clicada
+        var previous = 0;
+    </script>
+
+    <script>
+        function sugestao1() {
+            if(previous != 0){
+                var prev = "sugestaobtn" + previous;
+                document.getElementById(prev).style.background ='#d6dbdf';
+            }
+            document.getElementById("ImagemSugestao").src="sugestao1";
+            document.getElementById("sugestaobtn1").style.background = "#1abc9c";
+            previous = 1;
+
+        }
+    </script>
+
+    <script>
+        function sugestao2() {
+            if(previous != 0){
+                var prev = "sugestaobtn" + previous;
+                document.getElementById(prev).style.background ='#d6dbdf';
+            }
+            document.getElementById("ImagemSugestao").src="sugestao2";
+            document.getElementById("sugestaobtn2").style.background = "#1abc9c";
+            previous = 2;
+        }
+    </script>
+
+    <script type="text/javascript">
+        function before(){
+
+            if(previous <= 1){
+                return;
+            }
+            
+            var prev = "sugestaobtn"+previous;
+            var newImage = "sugestao" + (previous-1);
+            var next = "sugestaobtn" + (previous-1);
+
+            document.getElementById("ImagemSugestao").src = newImage;
+
+            document.getElementById("prevButton").style.background = '#d6dbdf';
+
+            document.getElementById(next).style.background = "#1abc9c";
+
+            document.getElementById(prev).style.background ='#d6dbdf';
+            previous-=1;
+        }
+    </script>
+
+    <script type="text/javascript">
+        function next(){
+
+            if(previous == 2){
+                return;
+            }
+            
+            var prev = "sugestaobtn"+previous;
+            var newImage = "sugestao" + (previous+1);
+            var next = "sugestaobtn" + (previous+1);
+
+            document.getElementById("ImagemSugestao").src = newImage;
+
+            document.getElementById("nextButton").style.background = '#d6dbdf';
+
+            document.getElementById(next).style.background = "#1abc9c";
+
+            document.getElementById(prev).style.background ='#d6dbdf';
+            previous+=1;
+        }
+    </script>
+
+        <div id = "profileDiv">
+            <div id = "profileThumbnail">
+                <img id = "profilePhoto" src = "manuel.png">   <p> Manuel </p>
+                <!--<div id = icons>
+                    <div id = "icon1" class=" fui-heart btn btn-block btn-lg btn-inverse"></div>
+                    <div id = "icon2" class=" fui-bookmark btn btn-block btn-lg btn-inverse"></div>
+                    <div id = "icon3" class=" fui-gear  btn btn-block btn-lg btn-inverse"> Settings</div>
+                </div> -->
+            </div>
+        </div>
+
+        <div id = "otherButtonsDiv">
+                   <div id = "helpButton" class=" fui-question-circle btn btn-block btn-lg btn-primary"></div>
+                   <div id = "musicButton" class=" fui-facebook btn btn-block btn-lg btn-primary"></div>
+                   <div id = "musicButton"  style = "margin-left: 2%;" class=" fui-spotify btn btn-block btn-lg btn-primary"></div>
+                   <div id = "moreButton" class=" fui-plus btn btn-block btn-lg btn-primary"></div>
+        </div>
+
+        <div id = "testDiv" style="margin-top: 5%;">
+            <button  id = "menuButton" class="btn btn-hg btn-primary" onclick="goToMenu()" size="2">
+                   <font size="1000">Menu</font>
+            </button>
+            <script type="text/javascript">
+                function goToMenu(){
+                    window.top.location.href = "personalizar/index.html";
+                }   
+            </script>
+        </div>
+        <div class="ism-slider" id="my-slider" style="margin-left: auto; margin-right: auto; margin-top: 2%; margin-bottom: 0px; box-shadow: 1px 1px 5px #888888">
+        <ol>
+            <li>
+                <img src="ism/image/slides/_u/1492562152765_332677.jpg">
+                <div class="ism-caption ism-caption-0">Salada de alho francês</div>
+            </li>
+            <li>
+                <img src="ism/image/slides/_u/1492562036870_209786.jpg">
+                <div class="ism-caption ism-caption-0">Hamburguer da casa</div>
+            </li>
+            <li>
+                <img src="ism/image/slides/_u/1492562024631_533954.jpg">
+                <div class="ism-caption ism-caption-0">Salmão á chef</div>
+            </li>
+        </ol>
+        </div>
+        <p style="text-align: center; margin-top: 0px; margin-bottom:2%"> Sugestões do dia</p>
+</body>
