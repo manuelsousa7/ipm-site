@@ -1,7 +1,7 @@
-# ipm-site
-Site do Grupo 22 - IPM
 
-Membros:
-*  Francisco Aguiar (84718)
-*  Gonçalo Marques (84719)
-*  Manuel Sousa (84740)
+Classes para Css:
+
+ButtonWithImage (tudo o que forem botoes com imagem como o nome indica)
+
+Button(qualquer tipo de botao normal sem imagem)
+
