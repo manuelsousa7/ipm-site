@@ -1,0 +1,9 @@
+<script type="text/javascript">
+                function goToMenu(){
+                    window.top.location.href = "AfterOrder.html";
+                }   
+</script>
+
+e depois na zona do button põe
+
+onclick="goToMenu()"

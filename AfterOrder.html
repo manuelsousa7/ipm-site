@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
+<title>Menu de Espera</title>
+ 
+<meta charset="utf-8">
+
+<!--Variavel global que representa o numero de segundos total do pedido-->
+<script type="text/javascript"> 
+        var time = 600;
+    </script>
+<!--<script type="text/javascript" src="script.js"></script>-->
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="dist/css/flat-ui.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="../dist/js/vendor/html5shiv.js"></script>
+      <script src="../dist/js/vendor/respond.min.js"></script>
+    <![endif]  #EAEDF1 -->
+
+    <script src="google/jquery.min.js"></script>
+
+    <script src="clock/flipclock.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="clock/flipclock2.css">
+    <!-- Stylesheet for WatNotif -->
+    <link href='notification/watnotif.left-top-bubble.min.css' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="AfterOrderStyle.css">
+    <link href='circular/circular.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body> 
+
+    <iframe id = "frame" src="AfterOrderFrame.html" scrolling="no"></iframe>
+
+    <div id = "profileDiv">
+         <nav class="top-right open">
+  <a class="disc l1">
+    <div style="color:#545775">Cenas</div>
+  </a>
+  <a class="disc l2">
+    <div style="color:#545775">Cenas</div>
+  </a>
+  <a class="disc l3">
+    <div style="color:#545775">Cenas</div>
+  </a>
+  <a class="disc l4">
+    <div style="color:#545775">Cenas</div>
+  </a>
+  <a class="disc l5 toggle">
+    
+  </a>
+</nav>
+
+<script src="circular/circular.js"></script>
+    </div>
+
+
+      <script type="text/javascript" src="notification/watnotif-1.0.js"></script>
+
+    <!-- script that handles the binding of the notifications to the buttons -->
+    <script type="text/javascript" src="notification/example.js"></script>
+
+</body>
+<footer>
+        <div class="clock"></div>
+      <!--<div class="message"></div>-->
+
+        <script type="text/javascript">
+            var clock;
+                $(document).ready(function() {
+
+                    clock = $('.clock').FlipClock(time,{
+                        countdown : true,
+                        clockFace: 'MinuteCounter'
+                    });
+                });
+        </script>
+</footer>
