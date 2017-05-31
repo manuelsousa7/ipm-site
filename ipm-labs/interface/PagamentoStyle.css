@@ -1,0 +1,249 @@
+:root {
+	--background_1: #fccb1b;
+	--background_2: #FFFCF9;
+	--font_color: #545775;
+	--border_color: #F4A261;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+#Titulo {
+	width: 100%;
+	text-align: center;
+	font-size: 200%;
+	padding-top: 4%;
+	color: var(--font_color);
+}
+
+#OverviewGrid {
+	position: relative;
+	top: 7%;
+	left: 5%;
+	height: 50%;
+	width: 55%;
+
+	text-align: center;
+	color: var(--font_color);
+}
+
+#Table1 {
+	left: 0%;
+	margin-left: 7%;
+}
+
+#Table2 {
+	left: 0%;
+	margin-left: 7%;
+}
+
+.Quantidade div{
+	display: inline;
+	text-align: center;
+}
+
+.BotaoQuantidade {
+	margin-left: 5%;
+	margin-right: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	border: solid var(--border_color);
+	border-radius: 8px;
+	font-size: 80%;
+	font-weight: bold;
+	width: 45px;
+	height: 50px;
+	color: var(--font_color);
+	background-color: var(--background_1);
+}
+
+.QuadradoQuantidade {
+	padding-left: 5%;
+	padding-right: 5%;
+	border: solid var(--border_color);
+	min-width: 45px;
+	height: 50px;
+	color:  var(--font_color);
+}
+
+#NutricionalGrid {
+	position: absolute;
+	width: 10%;
+	text-align: center;
+
+	right: 5%;
+	top: 28%;
+	color:  var(--font_color);
+}
+
+ul {
+	list-style-type: none;
+	text-align: left;
+}
+
+#BotaoVoltar, #BotaoPedir {
+	color:  var(--font_color);
+	background-color: var(--background_1);
+	border: solid var(--border_color);
+	border-radius: 8px;
+	font-size: 4em;
+
+	width: 15%;
+	height: 10%;
+	text-align: center;
+
+	margin-bottom: 1%;
+}
+
+#BotaoPedir {
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+}
+
+#BotaoVoltar {
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+}
+
+#Tempo {
+	position: absolute;
+	width: 330px;
+	left:auto;
+	right:auto;
+	left: 41.5%;
+	bottom: 6%;
+	
+	border: solid var(--border_color);
+	border-radius: 5px;
+	
+	background-color: var(--background_1);
+	color:  var(--font_color);
+}
+
+#TempoEstimado {
+	position: relative;
+	font-size: 1.5em;
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+.meter { 
+	height: 20px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	color: green;
+	padding: 10px;
+}
+
+
+/*Popup*/
+.popup {
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow: all;
+    color: #34495e;
+    text-align: center;
+    position: absolute;
+    z-index: 5;
+    top: 0%;
+}
+
+.fillScreen {
+	width: 100vw;
+    height: 100vh;
+    background-color: #555;
+    z-index: 6;
+    opacity: .6;
+}
+
+.janelaPopup {
+    position: absolute;
+	left: 30%;
+	width: 40%;
+	height: 40%;
+    top: 25%;
+
+    border: solid var(--border_color);
+    border-radius: 8px;
+
+    background-color: var(--background_2);
+    color:  var(--font_color);
+    text-align: center;
+
+    z-index: 5;
+    opacity: 1;
+}
+
+#popupText {
+	margin-top: 8%;
+    font-size: 1.5em;
+}
+
+#BotaoConfirmar, #BotaoNãoConfirmar {
+	color:  var(--font_color);
+	border: solid var(--border_color);
+	border-radius: 8px;
+	width: 25%;
+	height: 10%;
+	text-align: center;
+	padding-bottom: 6%;
+
+}
+
+#BotaoConfirmar {
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+
+	font-size: 1.5em;
+	background-color: #8AC926;
+}
+
+#BotaoNãoConfirmar {
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+
+	font-size: 1.5em;
+	background-color: #FF595E;
+}
+
+#moneyText {
+	margin-top: 5%;
+	font-size: 3.5em;
+}
+
+#fatText {
+	margin-top: 5%;
+	font-size: 2.5em;
+}
+#fatPopupText{
+	font-size: 3em;
+}
+
+.janelaPopupFat{
+    position: absolute;
+	left: 30%;
+	width: 40%;
+	height: 40%;
+    top: 25%;
+
+    border: solid #FF595E;
+    border-radius: 8px;
+
+    background-color: var(--background_2);
+    color:  var(--font_color);
+    text-align: center;
+
+    z-index: 5;
+    opacity: 1;
+}
+
+/* Toggle this class - hide and show the popup */
+.show {
+    visibility: visible;
+}

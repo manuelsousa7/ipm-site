@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta name="author" content="Darko Bunic"/>
+		<meta name="description" content="Drag and drop table content with JavaScript"/>
+		<meta name="viewport" content="width=device-width, user-scalable=no"/><!-- "position: fixed" fix for Android 2.2+ -->
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../redips-drag-min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+
+		<link href="dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Loading Flat UI -->
+<link href="dist/css/flat-ui.css" rel="stylesheet">
+<link href="../../../PagamentoStyle.css" rel="stylesheet">
+
+<script type="text/javascript" src="../../../tabela.js"></script>
+<script type="text/javascript" src="../../../manager.js"></script>
+    <script type="text/javascript" src="../../../descricao.js"></script>
+
+<style type="text/css">
+	.imageBox {
+  position: absolute;
+  padding: 5px;
+  left:1070px;
+  top:20;
+}
+
+#BotaoVoltar, #BotaoPedir {
+            color:  var(--font_color);
+            background-color: var(--background_1);
+            border: solid var(--border_color);
+            border-radius: 8px;
+            font-size: 4em;
+
+            width: 15%;
+            height: 6%;
+            text-align: center;
+
+            margin-bottom: 1%;
+        }
+
+        #BotaoPedir {
+            position: absolute;
+            bottom: 5%;
+            right: 75%;
+            width: 18%;
+
+            font-size: 1em;
+        }
+</style>
+	</head>
+	<body>
+		<div class="imageBox" id="Style">
+    <img height="290" width="290" style="img{border:0;}" src="" />
+		</div>
+		<!-- tables inside this DIV could have draggable content -->
+		<div id="redips-drag">
+			<!-- left container -->
+			<div id="left-container">
+				<!-- this block will become sticky (with a little JavaScript help)-->
+				<div id="left">
+					<table id="table1">
+						<colgroup>
+							<col width="150"/>
+							<col width="300"/>
+						</colgroup>
+						<!-- items should have code length = 3 -->
+						<tr>
+							<td><div id="i00" class="redips-drag redips-clone">Feijao Preto</div></td>
+							<td class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'preto.jpeg')" onMouseOut="ShowPicture('Style',0)" >1 dose de Feijao Preto</td>
+						</tr>
+						<tr>
+							<td><div id="i01" class="redips-drag redips-clone" >Couves</div></td>
+							<td class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'couve.jpg')" onMouseOut="ShowPicture('Style',0)"> 1 Dose de Couves</td>
+						</tr>
+						<tr>
+							<td><div id="i02" class="redips-drag redips-clone">Arroz Carolino</div></td>
+							<td class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'carolino.jpg')" onMouseOut="ShowPicture('Style',0)">1 dose de Arroz Carolino</td>
+						</tr>
+						<tr>
+							<td><div id="i03" class="redips-drag redips-clone">Sem Vinagre</div></td>
+							<td class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'sagres.jpg')" onMouseOut="ShowPicture('Style',0)">Description 3</td>
+						</tr>
+					</table>
+					<div id="message"></div>
+				</div>
+			</div><!-- left container -->
+			
+			<script>
+
+function ShowPicture(id,show, img) {
+  if (show=="1"){
+    document.getElementById(id).style.visibility = "visible"
+    document.getElementById(id).childNodes[1].src = img;
+  }
+  else if (show=="0"){
+    document.getElementById(id).style.visibility = "hidden"
+  }
+}
+
+</script>
+
+			<!-- right container -->
+			<div id="right">
+				<table>
+					<colgroup>
+						<col width="300"/>
+					</colgroup>
+					<tr class="maintd">
+						<td class="redips-trash"></td>
+					</tr>
+				</table>
+				<div style="clear:both"/>
+				<!-- list of dropeed elements -->
+				<form id="myform">
+				Pedido composto por:
+					<ol id="drop-list">
+					</ol>
+					<input id="save-button" type="button" value="Guardar" class="button" onclick="doit()" title="Save form"/>
+				</form>
+				
+			</div>
+		</div>
+	</body>
+</html>

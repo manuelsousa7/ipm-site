@@ -1,0 +1,42 @@
+@import "compass/css3";
+
+* { box-sizing: border-box; }
+
+body{
+	background-color:#ECECEC;
+}
+#profileThumbnail{
+	float: right;
+	margin-top: 5%;
+	text-align: center;
+	height: 50%;
+	margin-right: 1%;
+	width:20%;
+}
+#profilePhoto{
+	border-radius: 50%;
+	margin-left: 1%
+	margin-right: 100px;
+	margin-bottom: 5%;
+}
+
+footer {
+	background-color:#ECECEC;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 80px;
+    width: 100%;
+    margin-left: 30px;
+    right: 3%;
+    left: 75%;
+}
+
+iframe{
+	width: 70%;
+	height: 900px;
+	border-style: solid;
+	float: left;
+	margin-left: 3%;
+	margin-top: 5%;
+	overflow: hidden;
+}

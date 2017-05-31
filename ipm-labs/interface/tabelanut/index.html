@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu</title>
+
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    	localStorage.t = 0;
+        function goBack(){ 
+            window.top.location.href = javascript.history.back();
+        }
+    </script>
+</head>
+	<script type="text/javascript">
+		setInterval(function() {
+    		if(localStorage.t ==2){
+    			document.getElementById("rightFrame").src = "2.html"
+    			localStorage.t = 0;
+    		}
+    		if(localStorage.t ==1){
+    			document.getElementById("rightFrame").src = "1.html"
+    			localStorage.t = 0;
+    		}
+  		}, 200);
+	</script>
+
+	<frameset cols="35%,25%,*">
+	<frame src="esquerda.htm" noresize="noresize" frameBorder="0">
+	<frame  id ="rightFrame" src="1.html" border="0" noresize="noresize" frameBorder="0" >
+  <frame  id ="right2Frame" src="total.html" border="0" noresize="noresize" frameBorder="0" >
+	</frameset>
+	<p>Esta página utiliza frames, mas o seu browser não as suporta.</p>
+	</body>
+
+</html>

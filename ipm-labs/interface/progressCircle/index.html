@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Task Progress Meter</title>
+
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body backgroundColor="#EAEDF1">
+<div style="margin-top: 50px;">
+    <form>
+    <div class="prog"></div>
+    <input type="checkbox" name="progress-tasks" id="progress-task1" value="Task 1" required>
+    <label for="progress-task1" class="progress-task">Fazer nada</label>
+    <input type="checkbox" name="progress-tasks" id="progress-task2" value="Task 2" required>
+    <label for="progress-task2" class="progress-task">Lavar loiça</label>
+    <input type="checkbox" name="progress-tasks" id="progress-task3" value="Task 3" required>
+    <label for="progress-task3" class="progress-task">Preparar ingredientes</label>
+    <input type="checkbox" name="progress-tasks" id="progress-task4" value="Task 4" required>
+    <label for="progress-task4" class="progress-task">Temperar</label>
+    <input type="checkbox" name="progress-tasks" id="progress-task5" value="Task 5" required>
+    <label for="progress-task5" class="progress-task">Cozinhar</label>
+    <input type="checkbox" name="progress-tasks" id="progress-task6" value="Task 6" required>
+    <label for="progress-task6" class="progress-task">Empratar</label>
+    <label for="progress-tasks-percentage" class="progress-tasks-completed"><span>0</span><sup>%</sup> Completo</label>
+    <progress id="progress-tasks-percentage" name="progress-tasks-percentage" min="0" max="100"></progress>
+  </form>
+  <script type="text/javascript">
+            var undone = 1;
+            var undone2 = 1;
+            var undone3 = 1;
+            var undone4 = 1;
+            var undone5 =1;
+            var undoneFinal = 1;
+    setInterval(function() {
+            var t = 0;
+            if(localStorage.test<597 && undone==1){
+              undone = 0;
+              document.getElementById("progress-task1").checked = true;
+              checkboxChecked.push(checkbox[0]);
+              document.getElementById("progress-task2").checked = true;
+              updateProgressVal();
+            }
+            if(localStorage.test<591 && undone2==1){
+              undone2 = 0;
+              document.getElementById("progress-task3").checked = true;
+              checkboxChecked.push(checkbox[1]);
+              updateProgressVal();
+            }
+            if(localStorage.test<586 && undone3==1){
+              undone3 = 0;
+              document.getElementById("progress-task4").checked = true;
+              checkboxChecked.push(checkbox[2]);
+              updateProgressVal();
+            }
+            if(localStorage.test<520 && undone4==1){
+              undone4 = 0;
+              document.getElementById("progress-task5").checked = true;
+              checkboxChecked.push(checkbox[3]);
+              updateProgressVal();
+            }
+            if(localStorage.test<510 && undone5==1){
+              undone5 = 0;
+              document.getElementById("progress-task6").checked = true;
+              checkboxChecked.push(checkbox[4]);
+              updateProgressVal();
+              checkboxChecked.push(checkbox[4]);
+              updateProgressVal();
+            }
+            if(localStorage.test<490 && undoneFinal == 1){
+              undoneFinal = 0;
+            }
+          }, 1000);
+  </script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+</div>
+</body>
+</html>

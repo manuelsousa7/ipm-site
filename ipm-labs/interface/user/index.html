@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://s.bootsnipp.com/iframe/xnVB -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="robots" content="noindex">
+
+    <title>Perfil de Utilizador</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     <link href="../dist/css/flat-ui.css" rel="stylesheet">
+    <style type="text/css">
+
+    .user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+.toppad
+{margin-top:20px;
+}
+
+    </style>
+    <script src="./Simple User Profile - Bootsnipp.com_files/jquery-1.10.2.min.js"></script>
+    <script src="./Simple User Profile - Bootsnipp.com_files/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height()); 
+          window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body cz-shortcut-listen="true" style="background-color: #ECECEC ">
+	<div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+           <a href="editar.html" style="color: #545775;">Editar Perfil</a>
+
+        <a href="sair.html" style="color: #545775;" onclick="javascript:window.history.back();">| Voltar</a>
+       <br>
+<p class=" text-info" style="color: #545775;">Maio 19,2017,11:00 am </p>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+   
+   
+          <div class="panel panel-info" style="border-color: #F4A261">
+            <div class="panel-heading" style="background-color: #FCCB1B;border-color: #F4A261">
+              <h3 class="panel-title" style="background-color: #FCCB1B;color: #545775">Manuel Sousa</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="../manuel.png" class="img-circle img-responsive"> </div>
+                
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Primeira Visita:</td>
+                        <td>06/23/2013</td>
+                      </tr>
+                      <tr>
+                        <td>Data de Nascimento</td>
+                        <td>08/12/1996</td>
+                      </tr>
+                   
+                         <tr>
+                             </tr><tr>
+                        <td>Genero</td>
+                        <td>Masculino</td>
+                      </tr>
+                        <tr>
+                        <td>Morada</td>
+                        <td>leiriiiiaaaaaa</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:manuelvsousa@tecnico.ulisboa.pt" style="color: #009FE3;">manuelvsousa@tecnico.ulisboa.pt</a></td>
+                      </tr>
+                        <tr><td>Phone Number</td>
+                        <td>917171717171 (Telemovel)<br><br>5200 (Ext.)
+                        </td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+                  <a href="#" class="btn btn-primary" style="background-color: #FCCB1B;color: #545775;border-color: #F4A261">Historico de Pedidos</a>
+                  <a href="#" class="btn btn-primary" style="background-color: #FCCB1B;color: #545775;border-color: #F4A261">Calorias</a>
+                </div>
+              </div>
+            </div>
+            
+                 <div class="panel-footer" style="border-color: #F4A261">
+                        <a style="background-color: #FCCB1B;color: #545775;border-color: #F4A261" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <a href="edit.html" style="background-color: #FCCB1B;color: #545775;border-color: #F4A261" data-original-title="Editar Info." data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                          
+                        </span>
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+    var panels = $('.user-infos');
+    var panelsButton = $('.dropdown-user');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function() {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(400, function() {
+            //Completed slidetoggle
+            if(idFor.is(':visible'))
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+            }
+            else
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+            }
+        })
+    });
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('button').click(function(e) {
+        e.preventDefault();
+        alert("This is a demo.\n :-)");
+    });
+});
+	</script>
+
+
+</body></html>
