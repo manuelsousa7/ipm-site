@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Menu with scroll & hover effects</title>
+  
+  <link rel="stylesheet" href="normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+      <style type="text/css">
+      /* latin-ext */
+@font-face {
+  font-family: 'Capriola';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Capriola Regular'), local('Capriola-Regular'), url(https://fonts.gstatic.com/s/capriola/v4/MCXNg459ZtebBVYIDxweyhkAz4rYn47Zy2rvigWQf6w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Capriola';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Capriola Regular'), local('Capriola-Regular'), url(https://fonts.gstatic.com/s/capriola/v4/1uu0rRDB9aBBIKvbF1Q_1HYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+        :root {
+          --background_1: #fccb1b;
+          --background_2: #FFFCF9;
+          --font_color: #545775;
+          --border_color: #F4A261;
+        }
+
+        ::-webkit-scrollbar { 
+          display: none; 
+        }
+
+
+        #BotaoVoltar {
+          position: absolute;
+          color:  var(--font_color);
+          background-color: var(--background_1);
+          border: solid var(--border_color);
+          border-radius: 8px;
+          text-align: center;
+
+          cursor: pointer;
+
+          margin-left: 20px;
+
+          font-size: 250%;
+
+          bottom: 30px;
+          width: 85%;
+          height: 100px;
+
+        }
+      </style>
+
+  
+</head>
+
+<body>
+  
+<div class="amazing-menu" style="max-height: 920px">
+  <div class="menu-item">
+    <div class="container" onclick="MudaIndex(1)">
+      <div class="icon"><span class="ion-pizza"></span></div>
+      <div class="title">Carne </div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container" onclick="MudaIndex(2)">
+      <div class="icon"><span class="ion-pizza"></span></div>
+      <div class="title">Peixe</div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-beer"></span></div>
+      <div class="title">Bebidas</div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-coffee"></span></div>
+      <div class="title">Cafe</div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-icecream"></span></div>
+      <div class="title">Sobremesa </div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-pizza"></span></div>
+      <div class="title">Saladas</div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-beer"></span></div>
+      <div class="title">Cenas1</div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-ios-wineglass"></span></div>
+      <div class="title">Cenas2</div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-coffee"></span></div>
+      <div class="title">Cenas3</div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-icecream"></span></div>
+      <div class="title">Cenas4 </div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-icecream"></span></div>
+      <div class="title">Cenas5 </div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="icon"><span class="ion-icecream"></span></div>
+      <div class="title">Cenas6 </div>
+      <div class="arrow"><span class="ion-chevron-right"></span></div>
+    </div>
+  </div>
+</div>
+
+<button id="BotaoVoltar" type="button" class="button" onclick="retrocede()">
+  SAIR
+</button>
+  
+    <script src="js/index.js"></script>
+
+    <script type="text/javascript">
+      function MudaIndex(index) {
+        localStorage.setItem("IndexMenu", index.toString());
+      }
+
+      function retrocede() {
+        if (localStorage.getItem("Sair") != "Fim") {
+          window.top.location.href = "../index.html";
+        }
+        else {
+          window.top.location.href = "../AfterOrder.html";
+        }
+      }
+    </script>
+
+</body>
+</html>

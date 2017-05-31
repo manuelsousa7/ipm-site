@@ -1,0 +1,172 @@
+$size : 50px;
+$items : 5;
+$transition : .5s;
+$bounce : cubic-bezier(.3,1.4,.5,.9);
+$color-inner : gold;
+$color-outer : tomato;
+$background: mix($color-inner, $color-outer);
+$black : shade($color-outer, 80%);
+$start-scale : .5;
+$start-rot : 190deg;
+
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Alegreya Sans ExtraBold'), local('AlegreyaSans-ExtraBold'), url(https://fonts.gstatic.com/s/alegreyasans/v4/11EDm-lum6tskJMBbdy9aRLmkYPBC-9iwuv7CbLR6Iw.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Alegreya Sans ExtraBold'), local('AlegreyaSans-ExtraBold'), url(https://fonts.gstatic.com/s/alegreyasans/v4/11EDm-lum6tskJMBbdy9aRgd7mPBTqL1WJFcF5ZJcUI.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Alegreya Sans ExtraBold'), local('AlegreyaSans-ExtraBold'), url(https://fonts.gstatic.com/s/alegreyasans/v4/11EDm-lum6tskJMBbdy9aSsPtzGU7XgmiOMpkvc57q4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Alegreya Sans Black'), local('AlegreyaSans-Black'), url(https://fonts.gstatic.com/s/alegreyasans/v4/11EDm-lum6tskJMBbdy9abAxYizsbKzyN24UHUTUjk0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Alegreya Sans Black'), local('AlegreyaSans-Black'), url(https://fonts.gstatic.com/s/alegreyasans/v4/11EDm-lum6tskJMBbdy9aZUNlv3kV8WDG3qfUAtDYBQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Alegreya Sans Black'), local('AlegreyaSans-Black'), url(https://fonts.gstatic.com/s/alegreyasans/v4/11EDm-lum6tskJMBbdy9aTze9ImmdOK1SonNn_QOY2M.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+html, body { height: 100%; }
+body {
+	background: beige;
+	font-family: Alegreya Sans, sans-serif;
+}
+
+nav {
+	display: block;
+	position: fixed;
+	width: $size * $items * 2;
+	height: $size * $items * 2;
+	user-select: none;
+	transform: translate3d($size*.5,-$size*.5,0);
+	transition: transform $transition $bounce;
+	
+	&.open {
+		transform: translate3d(0,0,0);
+	}
+	
+	&.top-right {
+		top: -$size * ($items - 2.2);
+		right: -$size * ($items - 2.2);
+	}
+}
+
+.disc {	
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	font: $size*.5 Alegreya Sans, sans-serif;
+	line-height: $size * .8;
+	padding-top: $size * .2;
+	border-radius: $size * $items;
+	transform: scale3d($start-scale, $start-scale, $start-scale) rotate3d(0,0,1,$start-rot);
+	pointer-events: none;
+	opacity: 0;
+	cursor: pointer;
+	transition: transform $transition $bounce, opacity $transition;
+	
+	div {
+		transform: rotate(180deg);
+	}
+	
+	.open & {
+		pointer-events: auto;
+		opacity: 1;	
+	}
+}
+
+@for $i from 1 through $items {
+	.l#{$i} {
+		$i : $i - 1;
+		$-i : $items - $i;
+		$pct : $i/$items * 100%;
+		$color :  mix($color-inner, $color-outer, $pct);
+		
+		top: $i * $size;
+		left: $i * $size;
+		right: $i * $size;
+		bottom: $i * $size;
+		background: $color;
+		transition-delay: $i * $transition/$items;
+	
+		.open & {
+			transition-delay: $i * $transition/$items;
+			transform: scale3d(1,1,1) rotate3d(0,0,1,$start-rot);
+			opacity: 1;
+			
+			&:hover {
+				background: shade($color, 90%);
+				color: $color;
+				transition-delay: 0s;
+			}
+	
+			&:active {
+				background: shade($color, 50%);
+				color: $color;
+			}
+			
+			&.toggle {
+				transform: scale3d(.9,.9,.9) rotate3d(0,0,1,$start-rot - 180deg);
+			}
+		}
+	}
+}
+
+.toggle {
+	line-height: $size*2;
+	padding: 0;
+	width: $size*2;
+	background: $color-inner;
+	opacity: 1;
+	transform: none;
+	pointer-events: auto;
+	transition-delay: 0s;
+	
+	.open & {
+		transform: rotate3d(0,0,1,0deg);
+	}
+
+	&:hover {
+		background: shade($color-inner, 90%);
+		color: $color-inner;
+	}
+	&:active {
+		background: shade($color-inner, 50%);
+		color: rgba($color-inner, .5);
+		transform: scale(.9);
+		transition-duration: 0s;
+	}
+}

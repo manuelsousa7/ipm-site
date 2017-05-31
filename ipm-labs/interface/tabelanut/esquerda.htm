@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="team@css-tricks.com">
+<head>
+  <meta charset="UTF-8">
+  <title>Nutrition Facts Table in HTML & CSS</title>
+  <!-- Loading Bootstrap -->
+<link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Loading Flat UI -->
+<link href="../dist/css/flat-ui.css" rel="stylesheet">
+<style type="text/css">
+    body{
+        margin-top: 15%;
+        margin-left: 20%;
+    }    
+
+     :root {
+            --background_1: #fccb1b;
+            --background_2: #FFFCF9;
+            --font_color: #545775;
+            --border_color: #F4A261;
+        }
+
+    .flat-table {
+        margin-bottom: 20px;
+        border-collapse:collapse;
+        font-family: 'Lato', Calibri, Arial, sans-serif;
+        border: none;
+                border-radius: 3px;
+               -webkit-border-radius: 3px;
+               -moz-border-radius: 3px;
+    }
+    .flat-table th, .flat-table td {
+        box-shadow: inset 0 -1px rgba(0,0,0,0.25), 
+            inset 0 1px rgba(0,0,0,0.25);
+    }
+    .flat-table th {
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+        padding: 1em;
+        color: #545775;
+        text-shadow: 0 0 1px rgba(0,0,0,0.1);
+        font-size: 1.5em;
+         font-weight: bold;
+    }
+    .flat-table td {
+        color: #545775;
+        padding: 0.7em 1em 0.7em 1.15em;
+        text-shadow: 0 0 1px rgba(255,255,255,0.1);
+        font-size: 1.4em;
+        cursor: pointer;
+    }
+    .flat-table tr {
+        -webkit-transition: background 0.3s, box-shadow 0.3s;
+        -moz-transition: background 0.3s, box-shadow 0.3s;
+        transition: background 0.3s, box-shadow 0.3s;
+    }
+    .flat-table-1 {
+        background: #FCCB1B;
+    }
+    .flat-table-1 tr:hover {
+        background: #F4A261;
+    }
+    .flat-table-2 tr:hover {
+        background: rgba(0,0,0,0.1);
+    }
+    .flat-table-2 {
+        background: #f06060;
+    }
+    .flat-table-3 {
+        background: #52be7f;
+    }
+    .flat-table-3 tr:hover {
+        background: rgba(0,0,0,0.1);
+    }
+            #BotaoPedir {
+            color:  var(--font_color);
+            background-color: var(--background_1);
+            border: solid var(--border_color);
+            border-radius: 8px;
+            font-size: 4em;
+
+            width: 20%;
+            height: 6%;
+            text-align: center;
+
+            margin-bottom: 1%;
+        }
+
+        #BotaoPedir {
+            position: absolute;
+            bottom: 5%;
+            right: 65%;
+            width: 25%;
+
+            font-size: 1em;
+        }
+</style>  
+
+  
+</head>
+
+<body>
+
+<script type="text/javascript">
+    function changeValue2(){
+        localStorage.t = 2;
+    }
+    function changeValue1(){
+        localStorage.t = 1;
+    }
+</script>
+
+<table class="flat-table flat-table-1" style="border: solid var(--border_color); ">
+    <thead>
+        <b><th>Ingredientes</th></b>
+        <th>Calorias Totais</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td onclick="changeValue1()" >Carne de Porco</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td onclick="changeValue2()">Sumo Detox</td>
+            <td>100</td>
+        </tr>
+        <tr>
+           <td>Molho do Algarve</td>
+            <td>200</td>
+        </tr>
+        <tr>
+           <td>Amendoas</td>
+            <td>600</td>
+        </tr>
+        <tr>
+           <td>Serradura</td>
+            <td>100</td>
+        </tr>
+        <tr>
+           <td>Serradura</td>
+            <td>100</td>
+        </tr>
+        <tr>
+           <td>Serradura</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+           <td>Serradura</td>
+            <td>100</td>
+        </tr>
+    </tbody>
+</table>
+
+    <button id="BotaoPedir" type="button" class="button" onclick="change()" style="font-size: 2em;">
+        VOLTAR
+    </button>
+
+        <script type="text/javascript">
+        function change(){
+            localStorage.prev = 1;
+            window.top.location.href = window.history.back();
+        }
+    </script>
+
+</body>
+</html>

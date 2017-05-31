@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta name="author" content="Darko Bunic"/>
+		<meta name="description" content="Drag and drop table content with JavaScript"/>
+		<meta name="viewport" content="width=device-width, user-scalable=no"/><!-- "position: fixed" fix for Android 2.2+ -->
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../redips-drag-min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+
+		<link href="dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Loading Flat UI -->
+<link href="dist/css/flat-ui.css" rel="stylesheet">
+<link href="../../../PagamentoStyle.css" rel="stylesheet">
+
+<script type="text/javascript" src="../../../manager.js"></script>
+		<link href="../../../intro/introjs.css" rel="stylesheet">
+<style type="text/css">
+
+:root {
+	--background_1: #fccb1b;
+	--background_2: #FFFCF9;
+	--font_color: #545775;
+	--border_color: #F4A261;
+}
+
+html, body {
+	background-color: var(--background_2);
+	color: black;
+	border-color: var(--border_color);
+}
+
+.imageBox {
+  position: absolute;
+  left:670px;
+  top:20;
+}
+
+#table1 {
+	margin-top: 120px;
+}
+
+#table1 tr {
+	background-color: var(--background_2);
+	border-bottom: solid;
+	border-color: var(--border_color);
+}
+
+#BotaoVoltar {
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+
+	width: 15%;
+	height: 6%;
+
+	font-size: 1em;
+}
+
+#redips-drag {
+	margin-top: 18%;
+	color: black;
+}
+
+.redips-drag, .redips-clone {
+    background-color: var(--background_1);
+    border: solid var(--border_color);
+    color: black;
+    border-radius: 8px;
+    font-size: 150%;
+    height: 55px;
+    text-align: center;
+}
+
+#i00, #i01, #i03 {
+	padding-top: 12px;
+	color: black;
+}
+
+#save-button {
+	background-color: var(--background_1);
+    border: solid var(--border_color);
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-top: 10px;
+}
+
+#help {
+	cursor: pointer;
+}
+
+
+</style>
+	</head>
+	<body>
+
+		<div class="imageBox" id="Style" >
+   			<img height="300" width="300" style="img{border:0;};" src="" />
+		</div>
+
+		<!-- tables inside this DIV could have draggable content -->
+		<div id="redips-drag">
+			<!-- left container -->
+			<div id="left-container">
+				<!-- this block will become sticky (with a little JavaScript help)-->
+				<div id="left">
+
+					<table id="table1" width="400px" border="0" data-step="1" data-intro="Aqui seleciona o extra pretendido">
+						<colgroup>
+							<col width="150"/>
+							<col width="300"/>
+						</colgroup>
+
+						<!-- items should have code length = 3 -->
+						<tr style="height: 80px; border-top: solid; border-color: var(--border_color);">
+							<td><div id="i00" class="redips-drag redips-clone" data-step="2" data-intro="De seguida arrasta o extra a cor amarela...">Feijao Preto</div></td>
+							<td style="font-size: 110%; border-left: solid; border-right: none; border-color: var(--border_color);" class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'preto.jpeg')" onMouseOut="ShowPicture('Style',0)" >1 dose de Feijao Preto</td>
+						</tr>
+						<tr style="height: 80px; border-top: solid; border-color: var(--border_color);">
+							<td><div id="i00" class="redips-drag redips-clone">Batata Frita</div></td>
+							<td style="font-size: 110%; border-left: solid; border-right: none; border-color: var(--border_color);" class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'batata.jpg')" onMouseOut="ShowPicture('Style',0)" >1 dose de Batata Frita</td>
+						</tr>
+						<tr style="height: 80px; border-top: solid; border-color: var(--border_color);">
+							<td><div id="i00" class="redips-drag redips-clone">Massa</div></td>
+							<td style="font-size: 110%; border-left: solid; border-right: none; border-color: var(--border_color);" class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'massa.jpg')" onMouseOut="ShowPicture('Style',0)" >1 dose de Massa</td>
+						</tr>
+
+						<tr style="height: 80px;">
+							<td><div id="i01" class="redips-drag redips-clone" >Couves</div></td>
+							<td style="font-size: 110%; border-left: solid; border-right: none; border-color: var(--border_color);" class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'couve.jpg')" onMouseOut="ShowPicture('Style',0)"> 1 Dose de Couves</td>
+						</tr>
+						<tr style="height: 80px;">
+							<td><div id="i02" class="redips-drag redips-clone">Arroz Carolino</div></td>
+							<td style="font-size: 110%; border-left: solid; border-right: none; border-color: var(--border_color);" class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'carolino.jpg')" onMouseOut="ShowPicture('Style',0)">1 dose de Arroz Carolino</td>
+						</tr>
+						<tr style="height: 80px;">
+							<td><div id="i03" class="redips-drag redips-clone">Alface</div></td>
+							<td style="font-size: 110%; border-left: solid; border-right: none; border-color: var(--border_color);" class="redips-mark desc" onMouseOver="ShowPicture('Style',1, 'alface.jpg')" onMouseOut="ShowPicture('Style',0)">1 prato de alface</td>
+						</tr>
+					</table>
+
+					<div id="message"></div>
+				</div>
+			</div>
+			<!-- left container -->
+			
+			<script>
+			function ShowPicture(id,show, img) {
+				if (show=="1"){
+				document.getElementById(id).style.visibility = "visible"
+				document.getElementById(id).childNodes[1].src = img;
+				}
+				else if (show=="0"){
+				document.getElementById(id).style.visibility = "hidden"
+				}
+			}
+			</script>
+
+			<!-- right container -->
+			<div id="right">
+				<table>
+					<colgroup>
+						<col width="300"/>
+					</colgroup>
+					<tr class="maintd">
+						<td class="redips-trash" data-step="3" data-intro="... para Aqui!"></td>
+					</tr>
+				</table>
+				<div style="clear:both"/>
+				<!-- list of dropeed elements -->
+				<form id="myform" style="border: solid; border-radius: 2px; border-color: var(--border_color); background-color: var(--background_2)">
+				<p style="margin-left: 8px;">Pedido composto por:</p>
+					<ol id="drop-list" style="margin-left: 8px; max-height: 310px; overflow: scroll">
+					</ol>
+					<!--<input id="save-button" type="button" value="Guardar" class="button" onclick="doit()" title="Save form"/>-->
+					<button id="save-button" type="button" class="button" onclick="doit()">Guardar</button>
+				</form>
+				
+				</div>
+
+			</div>
+		</div>
+		<div>
+
+		<script type="text/javascript">
+		var day = document.createElement("div");
+		redips.init();
+		day.innerHTML = '<div id="i00" class="redips-drag redips-clone">1 bife carne</div>';
+		redips.addItem(day);
+		day.innerHTML = '<div id="i00" class="redips-drag redips-clone">1 dose de arroz carolino</div>';
+		redips.addItem(day);
+		day.innerHTML = '<div id="i00" class="redips-drag redips-clone">1 dose de Salada</div>';
+		redips.addItem(day);
+
+		</script>
+ <img src="../../../help.png" id="help" height="42" width="42" style="position: absolute;left: 1%;top: 1%">
+			<button id="BotaoVoltar" data-balloon-pos="up" data-balloon="Volte para o menu anterior" onclick="window.location.href = '../../descricao.html';" style="font-size: 2em;">
+				VOLTAR
+			</button>
+		</div>
+
+				      <script type="text/javascript">
+      document.getElementById('help').onclick = function() {
+        introJs().setOption('doneLabel', 'Terminar').start().oncomplete(function() {
+          window.location.href = '';
+        });
+      };
+    </script>
+
+     <script type="text/javascript" src="../../../intro/intro.js"></script>  
+<script>
+
+window.onload = function() {
+        newIndex = "0";
+        localStorage.setItem("IndexMenu", "0");
+}
+
+function chamada() {
+	var novosPratos = JSON.parse(localStorage.getItem("listaPratos"));
+	localStorage.setItem("Tabela", "Sim");
+}
+
+function doit(){
+	localStorage.per = 1;
+	localStorage.setItem("PersName","Carne do Algarve");
+	chamada();
+}
+
+setInterval(
+        function() {
+                if (newIndex != -1 && localStorage.getItem("IndexMenu") != newIndex) {
+
+                        switch (localStorage.getItem("IndexMenu")) {
+                                case "1":
+                                        window.location.href = "../../comida1.html";
+                                        localStorage.setItem("IndexMenu", "1");
+                                        break;
+
+                                case "2":
+                                        window.location.href = "../../comida2.html";
+                                        localStorage.setItem("IndexMenu", "2");
+                                        break;
+
+                                case "3":
+                                        window.location.href = "../../comida3.html";
+                                        localStorage.setItem("IndexMenu", "3");
+                                        break;
+                        }
+
+                }
+        }
+, 100);
+
+
+</script>
+
+	</body>
+</html>

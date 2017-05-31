@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prato</title>
+
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="../manager.js"></script>
+    <script type="text/javascript" src="../descricao.js"></script>
+
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+	<!-- Loading Bootstrap -->
+	<link href="..\dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Loading Flat UI -->
+	<link href="..\dist/css/flat-ui.css" rel="stylesheet">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+	  <script src="../dist/js/vendor/html5shiv.js"></script>
+	  <script src="../dist/js/vendor/respond.min.js"></script>
+	<![endif]  #EAEDF1 -->
+
+	<link rel="stylesheet" href="clock/flipclock2.css">
+
+	<script src="..\google/jquery.min.js"></script>
+	<script src="..\clock/flipclock2.js"></script>
+
+	<link href='..\notification/notification.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<!-- Stylesheet for WatNotif -->
+	<link href='notification/watnotif.left-top-bubble.min.css' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+
+	    :root {
+			--background_1: #fccb1b;
+			--background_2: #FFFCF9;
+			--font_color: #545775;
+			--border_color: #F4A261;
+		}
+
+    	body {
+    		text-align: center;
+    	}
+
+    	#Seccao1 {
+    		position: absolute;
+    		width: 50%;
+    		height: 35%;
+
+    		margin-left: auto;
+    		margin-right: auto;
+    	}
+
+    	#ImagemPrato {
+    		width: 100%;
+    		height: 50%;
+    		padding-top: 5%;
+    	}
+
+    	#NomePrato {
+    		margin-top: -5%;
+    		font-size: 250%;
+    	}
+
+    	#PrecoPrato {
+    		margin-top: 10%;
+    		font-size: 300%;
+    	}
+
+    	#DescricaoPrato {
+    		margin-top: 10%;
+    		font-size: 120%;
+    		width: 70%;
+    		margin-left: auto;
+    		margin-right: auto;
+    	}
+
+    	#Seccao2 {
+    		position: absolute;
+    		display: inline-block;
+    		top: 60%;
+    		right: 0%;
+    		width: 50%;
+    	}
+
+    	#NutricionalGrid {
+			position: absolute;
+			width: 15%;
+			text-align: center;
+
+			right: 2.5%;
+			top: -125px;
+			color:  var(--font_color);
+		}
+
+		#BotaoVoltar, #BotaoPedir {
+			color:  var(--font_color);
+			background-color: var(--background_1);
+			border: solid var(--border_color);
+			border-radius: 8px;
+			font-size: 4em;
+
+			width: 15%;
+			height: 6%;
+			text-align: center;
+
+			margin-bottom: 1%;
+		}
+
+		#BotaoPedir {
+			position: absolute;
+			bottom: 5%;
+			right: 5%;
+			width: 18%;
+
+			font-size: 1em;
+		}
+
+		#BotaoVoltar {
+			position: absolute;
+			bottom: 5%;
+			left: 5%;
+
+			font-size: 1em;
+		}
+
+		ul {
+			list-style-type: none;
+			text-align: left;
+		}
+
+    </style>
+
+</head>
+<body>
+
+	<div id="ImagemPrato">
+		<img id="Imagem" width="35%" height="75%" class="fake-image" src="comida/1.jpg" alt="">
+	</div>
+	<div id="Seccao1">
+		<h1 id="NomePrato">Batata Mo</h1>
+		<h2 id="PrecoPrato">7.50 €</h2>
+		<h4 id="DescricaoPrato">
+			Muito bom sim senhor excelente prato, recomendo a toda a gente que gosta de um bom bifinho
+			para a paparoca do almoço.
+		</h4>
+	</div>
+
+	<div id="Seccao2">
+		<!--Tabela de visualização do valor nutricional-->
+		<div id="NutricionalGrid">
+			<table id="NutricionalTable" align="right" width="60%" style="min-width: 450px">
+				<tr style="font-size: 1.7em; font-weight: bold">
+					<td width="50%" style="padding-bottom: 5%;">Valor Nutricional</td>
+				</tr>
+				<tr style="font-size: 1.7em">
+					<td width="50%" style="min-width: 350px; border-top: solid var(--border_color);">
+						<ul>
+							<li id="TextoCalorias">Calorias:	225 g</li>
+						</ul>
+					</td>
+				</tr>
+				<tr style="font-size: 1.7em">
+					<td width="50%" style="min-width: 350px; border-top: solid var(--border_color)">
+						<ul>
+							<li id="TextoProteinas">Proteínas:	21 g</li>
+						</ul>
+					</td>
+				</tr>
+				<tr style="font-size: 1.7em">
+					<td width="50%" style="min-width: 350px; border-top: solid var(--border_color)">
+						<ul>
+							<li id="TextoLipidos">Lípidos:	15 g</li>
+						</ul>
+					</td>
+				</tr>
+				<tr style="font-size: 1.7em">
+					<td width="50%" style="min-width: 350px; border-top: solid var(--border_color)">
+						<ul>
+							<li id="TextoHidratos">Hidratos:	24 g</li>
+						</ul>
+					</td>
+				</tr>
+
+				
+			</table>
+		</div>
+	</div>
+
+	<button id="BotaoVoltar" type="button" class="button" onclick="location.href = 'javascript:history.back()';" style="font-size: 2em;">
+		VOLTAR
+	</button>
+
+	<button id="BotaoPedir" type="button" class="button" onclick="" style="font-size: 2em;">
+		ADICIONAR
+	</button>
+	
+</body>
+</html>
